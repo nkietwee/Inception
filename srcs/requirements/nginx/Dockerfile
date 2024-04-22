@@ -2,7 +2,8 @@
 FROM	debian:bullseye
 
 # System setting
-RUN	apt update && apt upgrade -y && apt install wget -y
+#RUN	apt update && apt upgrade -y && apt install wget -y
+RUN	apt update
 
 # debugging
 RUN	apt install vim -y

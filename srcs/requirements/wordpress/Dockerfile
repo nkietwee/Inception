@@ -2,7 +2,7 @@
 FROM	debian:bullseye
 
 # System setting
-RUN	apt update && apt upgrade -y && apt install wget -y
+RUN	apt update && apt install wget -y
 
 # debugging
 RUN	apt install vim -y
@@ -33,5 +33,5 @@ RUN	service php7.4-fpm start
 
 ENTRYPOINT ["/home/wordpress.sh"]
 
-#CMD	["/usr/sbin/php-fpm7.4", "-F"]
-CMD	["tail", "-f"]
+CMD	["/usr/sbin/php-fpm7.4", "-F"]
+#CMD 	["tail", "-f"]

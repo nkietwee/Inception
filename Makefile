@@ -7,6 +7,7 @@ create:
 	sudo mkdir -p ${VOLUME_DIR}/mariadb
 
 up:
+	#docker compose -f ./srcs/docker-compose.yml   up -d --build
 	docker compose -f ./srcs/docker-compose.yml --env-file ./srcs/.env up -d --build
 
 down:

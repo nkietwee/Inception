@@ -2,7 +2,7 @@
 FROM	debian:bullseye
 
 # System setting
-RUN	apt update && apt install wget -y
+RUN	apt update
 
 # debugging
 RUN	apt install vim -y
@@ -11,6 +11,9 @@ RUN	apt install vim -y
 # Mariadb install
 RUN	apt install mariadb-server -y
 
+RUN	mkdir -p /var/run/mysqld && \
+	chmod -R 777 /var/run/mysqld
+ 
 # Script
 COPY	./tools/mariadb.sh /home/
 
