@@ -23,7 +23,7 @@ services:
       context: ./requirements/nginx
       dockerfile: Dockerfile
     ports:
-      - 1050:1050
+      - 80:80
     depends_on:
       - wordpress
     networks:
