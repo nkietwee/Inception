@@ -23,13 +23,13 @@ services:
       context: ./requirements/nginx
       dockerfile: Dockerfile
     ports:
-      - 80:80
+      - 1050:1050
     depends_on:
       - wordpress
     networks:
       - network
     volumes:
-      - wordpress:/var/www/html
+      - wordpress:/var/www/html/wordpress
     restart: always
   mariadb:
     container_name: mariadb
