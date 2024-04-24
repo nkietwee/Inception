@@ -9,7 +9,17 @@ RUN	apt update
 RUN	apt install vim -y
 
 # Nginx install
-RUN	apt install nginx -y
+RUN	apt install nginx openssl -y
+
+# SSL, TSL
+RUN	mkdir -p /etc/nginx/ssl && \
+	openssl req -x509 -nodes \
+	-days 365 \
+	-newkey rsa:2048 \
+	-keyout /etc/nginx/ssl/nkietwee.key \
+	-out /etc/nginx/ssl/nkietwee.crt \
+	-subj "/C=TH/L=Bangkok/O=42/CN=nkietwee.42.fr"
+
 
 COPY	./tools/nginx.conf /etc/nginx/conf.d/
 
