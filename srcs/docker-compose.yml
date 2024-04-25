@@ -3,7 +3,7 @@ version: '3'
 services:
   wordpress:
     container_name: wordpress
-    image: wordpress
+    image: wordpress_img
     build:
       context: ./requirements/wordpress
       dockerfile: Dockerfile
@@ -18,7 +18,7 @@ services:
     restart: always
   nginx:
     container_name: nginx
-    image: nginx
+    image: nginx_img
     build:
       context: ./requirements/nginx
       dockerfile: Dockerfile
@@ -33,7 +33,7 @@ services:
     restart: always
   mariadb:
     container_name: mariadb
-    image: mariadb
+    image: mariadb_img
     build:
       context: ./requirements/mariadb
       dockerfile: Dockerfile

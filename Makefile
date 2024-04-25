@@ -3,8 +3,8 @@ VOLUME_DIR = /home/ubuntu/data
 all: create up
 
 create:
-	sudo mkdir -p ${VOLUME_DIR}/wordpress
-	sudo mkdir -p ${VOLUME_DIR}/mariadb
+	mkdir -p ${HOME} ${VOLUME_DIR}/wordpress
+	mkdir -p ${HOME} ${VOLUME_DIR}/mariadb
 
 up:
 	#docker compose -f ./srcs/docker-compose.yml   up -d --build
@@ -29,5 +29,6 @@ fclean:
 	docker system prune --all --force
 	docker network prune --force
 	docker volume prune --force
+	rm -rf ${HOME}/data
 
 .PHONY : all create up down start stop re clean fclean
